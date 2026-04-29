@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Folem × Yuri Palheiros | R$3M em 5 Meses</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange:        #FF8C00;
+    --orange-light:  #FFB347;
+    --orange-dark:   #C96A00;
+    --orange-glow:   rgba(255,140,0,0.12);
+    --orange-border: rgba(255,140,0,0.22);
+    --black:   #080808;
+    --dark:    #101010;
+    --dark2:   #161616;
+    --dark3:   #1E1E1E;
+    --dark4:   #262626;
+    --white:   #FFFFFF;
+    --off-white: #F4EFE6;
+    --muted:   #777777;
+    --muted2:  rgba(255,255,255,0.45);
+    --muted3:  rgba(255,255,255,0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── STARFIELD ──────────────────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 42% 7%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 73% 35%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 91% 12%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 28% 58%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 64% 78%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 8% 90%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 85% 65%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 50% 45%, rgba(255,140,0,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 33% 82%, rgba(255,255,255,0.2) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── NAV ────────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8,8,8,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--orange-border);
+  }
+
+  .nav-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: rgba(255,140,0,0.08);
+    border: 1px solid var(--orange-border);
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+
+  .nav-cta {
+    background: var(--orange);
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--orange-light); }
+
+  /* ─── HERO ────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 140px 24px 100px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 90% 70% at 50% -10%, rgba(255,140,0,0.14) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255,140,0,0.05) 0%, transparent 60%);
+  }
+
+  .hero-overline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,140,0,0.08);
+    border: 1px solid var(--orange-border);
+    border-radius: 100px;
+    padding: 8px 22px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 48px;
+  }
+
+  .hero-overline::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--orange);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(255,140,0,0.4); }
+    50%       { opacity: 0.6; transform: scale(0.85); box-shadow: 0 0 0 6px rgba(255,140,0,0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(68px, 11vw, 140px);
+    line-height: 0.92;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-title .accent { color: var(--orange); display: block; }
+
+  .hero-subtitle {
+    font-size: clamp(17px, 2.2vw, 22px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    max-width: 660px;
+    margin: 28px auto 54px;
+    line-height: 1.55;
+  }
+
+  .hero-subtitle strong { color: var(--off-white); font-weight: 600; }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 17px 44px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,140,0,0.3); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 17px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--orange-border); color: var(--orange); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.25);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, transparent, var(--orange));
+    animation: scrollDown 1.8s ease-in-out infinite;
+  }
+
+  @keyframes scrollDown {
+    0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+    30%  { opacity: 1; }
+    60%  { transform: scaleY(1); transform-origin: top; }
+    61%  { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  }
+
+  /* ─── SHARED SECTION ─────────────────────────────────── */
+  .section {
+    padding: 110px 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: var(--orange);
+    border-radius: 1px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 6.5vw, 80px);
+    line-height: 0.96;
+    color: var(--white);
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .section-title .accent { color: var(--orange); }
+
+  .section-desc {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    max-width: 620px;
+    line-height: 1.7;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--orange);
+    margin: 28px 0;
+    border-radius: 1px;
+  }
+
+  /* ─── NUMBERS STRIP ──────────────────────────────────── */
+  .strip {
+    background: var(--dark2);
+    border-top: 1px solid var(--orange-border);
+    border-bottom: 1px solid var(--orange-border);
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .strip-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .strip-item {
+    padding: 48px 24px;
+    text-align: center;
+    border-right: 1px solid var(--orange-border);
+    position: relative;
+  }
+
+  .strip-item:last-child { border-right: none; }
+
+  .strip-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .strip-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ─── CARD BASE ──────────────────────────────────────── */
+  .card {
+    background: var(--dark2);
+    border: 1px solid var(--orange-border);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-top-glow::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+
+  /* ─── DIAGNÓSTICO ────────────────────────────────────── */
+  .diag-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .profile-visual {
+    position: relative;
+    height: 520px;
+  }
+
+  .profile-main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 72%;
+    height: 420px;
+    background: linear-gradient(145deg, var(--dark3) 0%, var(--dark2) 100%);
+    border: 1px solid var(--orange-border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  .profile-main::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to top, rgba(255,140,0,0.06), transparent);
+  }
+
+  .avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: rgba(255,140,0,0.1);
+    border: 2px solid var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: var(--orange);
+    letter-spacing: 0.04em;
+  }
+
+  .profile-handle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .profile-niche {
+    font-size: 11px;
+    color: var(--orange);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .profile-stats {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .pstat { text-align: center; }
+
+  .pstat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .pstat-lbl {
+    font-size: 9px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .profile-accent {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 52%;
+    height: 190px;
+    background: var(--orange);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .pa-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.55);
+  }
+
+  .pa-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--black);
+    line-height: 1;
+  }
+
+  .pa-sub {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.45);
+  }
+
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .tag {
+    background: rgba(255,140,0,0.07);
+    border: 1px solid rgba(255,140,0,0.22);
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── OPP BOX ────────────────────────────────────────── */
+  .opp-box {
+    background: var(--dark2);
+    border: 1px solid var(--orange-border);
+    border-radius: 12px;
+    padding: 52px;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .opp-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+
+  .opp-box::after {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,140,0,0.08), transparent 70%);
+    pointer-events: none;
+  }
+
+  .opp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .opp-item {
+    border-left: 2px solid var(--orange);
+    padding-left: 22px;
+  }
+
+  .opp-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+
+  .opp-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+  }
+
+  /* ─── SEMANA 1 ────────────────────────────────────────── */
+  .week-hero {
+    background: linear-gradient(135deg, rgba(255,140,0,0.07) 0%, rgba(255,140,0,0.02) 100%);
+    border: 1px solid var(--orange-border);
+    border-radius: 14px;
+    padding: 56px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 52px;
+  }
+
+  .week-hero::before {
+    content: 'SEMANA 1';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 180px;
+    color: rgba(255,140,0,0.04);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .week-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+
+  .week-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 54px;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .week-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  .day-list { display: flex; flex-direction: column; gap: 0; }
+
+  .day-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+
+  .day-item:last-child { border-bottom: none; }
+
+  .day-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--orange);
+    padding-top: 3px;
+    text-transform: uppercase;
+  }
+
+  .day-body { display: flex; flex-direction: column; }
+
+  .day-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .day-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.48);
+    line-height: 1.65;
+  }
+
+  .day-tasks {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .day-task {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .day-task::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    opacity: 0.7;
+    font-size: 11px;
+  }
+
+  /* ─── RESPONSABILIDADES ──────────────────────────────── */
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 52px;
+  }
+
+  .split-card {
+    border-radius: 12px;
+    padding: 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .split-card.yuri {
+    background: rgba(255,140,0,0.06);
+    border: 1px solid rgba(255,140,0,0.3);
+  }
+
+  .split-card.folem {
+    background: var(--dark2);
+    border: 1px solid var(--orange-border);
+  }
+
+  .split-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .split-tag.yuri-tag { color: var(--orange); }
+  .split-tag.folem-tag { color: rgba(255,255,255,0.38); }
+
+  .split-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .split-subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.38);
+    font-weight: 300;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .split-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+
+  .split-list li {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.65);
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .split-list.yuri-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-size: 12px;
+    top: 1px;
+  }
+
+  .split-list.folem-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.28);
+    font-size: 12px;
+    top: 0;
+  }
+
+  .split-emphasis {
+    margin-top: 28px;
+    padding: 16px 20px;
+    background: rgba(255,140,0,0.08);
+    border-left: 3px solid var(--orange);
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--off-white);
+    line-height: 1.5;
+  }
+
+  /* ─── SERVIÇOS ───────────────────────────────────────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 52px;
+  }
+
+  .svc-card {
+    background: var(--dark2);
+    border: 1px solid var(--orange-border);
+    border-radius: 10px;
+    padding: 30px 26px;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .svc-card:hover {
+    border-color: rgba(255,140,0,0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(255,140,0,0.1);
+  }
+
+  .svc-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,140,0,0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255,140,0,0.15);
+  }
+
+  .svc-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .svc-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+  }
+
+  .svc-list {
+    margin-top: 14px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .svc-list li {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.32);
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .svc-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.5;
+  }
+
+  /* ─── INDICAÇÃO ATIVA ────────────────────────────────── */
+  .referral-section {
+    background: var(--dark2);
+    border-top: 1px solid var(--orange-border);
+    border-bottom: 1px solid var(--orange-border);
+    padding: 110px 24px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .referral-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 100% 50%, rgba(255,140,0,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .referral-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .referral-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-top: 52px;
+  }
+
+  .referral-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ref-step {
+    display: flex;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .ref-step:last-child { border-bottom: none; }
+
+  .ref-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: var(--orange);
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+    width: 28px;
+    padding-top: 2px;
+  }
+
+  .ref-content {}
+
+  .ref-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .ref-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.48);
+    line-height: 1.6;
+  }
+
+  .referral-impact {
+    background: rgba(255,140,0,0.06);
+    border: 1px solid rgba(255,140,0,0.25);
+    border-radius: 12px;
+    padding: 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .referral-impact::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+
+  .impact-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .impact-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 28px;
+  }
+
+  .impact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .impact-item {
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .impact-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .impact-item-text {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.42);
+    line-height: 1.5;
+  }
+
+  /* ─── REVENUE MATH ───────────────────────────────────── */
+  .revenue-wrap {
+    background: var(--dark2);
+    border-top: 1px solid var(--orange-border);
+    border-bottom: 1px solid var(--orange-border);
+    padding: 110px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .revenue-inner { max-width: 1120px; margin: 0 auto; }
+
+  .math-box {
+    background: var(--dark3);
+    border: 1px solid var(--orange-border);
+    border-radius: 14px;
+    padding: 52px;
+    margin-top: 52px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .math-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+
+  .math-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    gap: 24px;
+  }
+
+  .math-row:last-of-type { border-bottom: none; }
+
+  .math-label {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    flex: 1;
+  }
+
+  .math-label strong { color: var(--off-white); font-weight: 600; }
+
+  .math-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: var(--orange);
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+  }
+
+  .math-total {
+    background: rgba(255,140,0,0.07);
+    border: 1px solid rgba(255,140,0,0.3);
+    border-radius: 10px;
+    padding: 28px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+    gap: 24px;
+  }
+
+  .math-total-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .math-total-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+    color: var(--orange);
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .math-scenarios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .math-scenario {
+    background: var(--dark4);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .math-scenario.highlight {
+    background: rgba(255,140,0,0.07);
+    border-color: rgba(255,140,0,0.3);
+  }
+
+  .scenario-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .scenario-label.orange { color: var(--orange); }
+
+  .scenario-ticket {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+
+  .scenario-total {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .scenario-total.orange { color: var(--orange); }
+
+  .scenario-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 6px;
+    font-weight: 300;
+  }
+
+  /* ─── PROGRAMA DE ACELERAÇÃO ─────────────────────────── */
+  .prog-full {
+    background: var(--dark2);
+    border-top: 1px solid var(--orange-border);
+    padding: 110px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .prog-inner { max-width: 1120px; margin: 0 auto; }
+
+  .prog-bar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin: 48px 0 32px;
+  }
+
+  .prog-pill {
+    background: var(--dark3);
+    border: 1px solid var(--orange-border);
+    border-radius: 8px;
+    padding: 18px 10px;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .prog-pill:hover {
+    background: rgba(255,140,0,0.07);
+    border-color: rgba(255,140,0,0.45);
+  }
+
+  .prog-pill-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .prog-pill-name {
+    font-size: 9px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  .phases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--orange-border);
+    border: 1px solid var(--orange-border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .phase-card {
+    background: var(--dark2);
+    padding: 38px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .phase-card:hover { background: var(--dark3); }
+
+  .phase-watermark {
+    position: absolute;
+    top: 16px; right: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: rgba(255,140,0,0.07);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+  }
+
+  .phase-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+
+  .phase-title {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 18px;
+    line-height: 1.3;
+    max-width: 300px;
+  }
+
+  .phase-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .phase-items li {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.45;
+  }
+
+  .phase-items li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 7px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.5;
+  }
+
+  .phase-card.special {
+    background: rgba(255,140,0,0.04);
+    border: 1px solid rgba(255,140,0,0.2);
+  }
+
+  /* ─── CRONOGRAMA ─────────────────────────────────────── */
+  .timeline {
+    margin-top: 52px;
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 24px; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--orange), transparent 90%);
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 28px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .tl-dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--dark2);
+    border: 2px solid var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: var(--orange);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.04em;
+  }
+
+  .tl-dot.active {
+    background: var(--orange);
+    color: var(--black);
+  }
+
+  .tl-body { padding-top: 10px; }
+
+  .tl-period {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+
+  .tl-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .tl-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.48);
+    line-height: 1.65;
+    max-width: 600px;
+  }
+
+  .tl-deliverables {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tl-chip {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,140,0,0.8);
+    background: rgba(255,140,0,0.06);
+    border: 1px solid rgba(255,140,0,0.18);
+    padding: 3px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ─── CTA FINAL ──────────────────────────────────────── */
+  .final-cta {
+    text-align: center;
+    padding: 140px 24px;
+    position: relative;
+    z-index: 1;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255,140,0,0.1) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 30% at 50% 50%, rgba(255,140,0,0.04) 0%, transparent 60%);
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='0.6' fill='rgba(255,140,0,0.12)'/%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+  }
+
+  .final-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 110px);
+    line-height: 0.93;
+    color: var(--white);
+    margin-bottom: 32px;
+    letter-spacing: 0.01em;
+  }
+
+  .final-big .accent { color: var(--orange); display: block; }
+
+  .final-sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    max-width: 520px;
+    margin: 0 auto 52px;
+    line-height: 1.6;
+  }
+
+  .final-sub strong { color: var(--off-white); font-weight: 600; }
+
+  .final-note {
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.22);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--orange-border);
+    padding: 44px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1120px;
+    margin: 0 auto;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo img { height: 28px; width: auto; opacity: 0.6; }
+
+  .footer-text {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .footer-text span { color: var(--orange); opacity: 0.7; }
+
+  .footer-conf {
+    font-size: 10px;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-badge { display: none; }
+    .strip-inner { grid-template-columns: repeat(3, 1fr); }
+    .strip-item:nth-child(3) { border-right: none; }
+    .strip-item:nth-child(4), .strip-item:nth-child(5) { border-top: 1px solid var(--orange-border); }
+    .diag-grid { grid-template-columns: 1fr; }
+    .profile-visual { height: 280px; }
+    .profile-main { width: 68%; height: 260px; }
+    .opp-grid { grid-template-columns: 1fr; }
+    .split-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .referral-grid { grid-template-columns: 1fr; }
+    .math-scenarios { grid-template-columns: 1fr; }
+    .prog-bar { grid-template-columns: repeat(4, 1fr); }
+    .phases-grid { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    .strip-inner { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .prog-bar { grid-template-columns: repeat(3, 1fr); }
+    .math-box { padding: 28px 20px; }
+    .week-hero { padding: 32px 24px; }
+    .opp-box { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-logo">
+    <img src="Logo Folem.png" alt="Folem">
+  </div>
+  <span class="nav-badge">Proposta Exclusiva · Confidencial</span>
+  <a href="#cta" class="nav-cta">Fechar Parceria ↗</a>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-overline">Programa de Aceleração · @yuripalheiros</div>
+  <p class="hero-eyebrow">Folem × Yuri Palheiros — Parceria Estratégica 2026</p>
+  <h1 class="hero-title">
+    Do Potencial<br>ao
+    <span class="accent">R$3M em 5 Meses.</span>
+  </h1>
+  <p class="hero-subtitle">
+    Você já tem <strong>187 mil seguidores</strong>, autoridade real em Bitcoin e cripto, produtos de alto valor e posicionamento internacional. Os cenários apontam <strong>R$2M já no primeiro mês e meio</strong> — com o sistema certo, isso é só o começo.
+  </p>
+  <div class="hero-actions">
+    <a href="#proposta" class="btn-primary">Ver a Proposta Completa ↓</a>
+    <a href="#semana1" class="btn-secondary">Semana 1 de Onboarding →</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    scroll
+  </div>
+</div>
+
+<!-- ═══ NÚMEROS ═══════════════════════════════════════════════════════ -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <div class="strip-value">187K</div>
+      <div class="strip-label">Seguidores<br>Instagram</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-value">R$2M</div>
+      <div class="strip-label">Projeção<br>em 45 dias</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-value">R$3M</div>
+      <div class="strip-label">Meta mensal<br>em 5 meses</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-value">R$200K</div>
+      <div class="strip-label">Ticket máximo<br>do produto</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-value">100%</div>
+      <div class="strip-label">Operação<br>pela Folem</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DIAGNÓSTICO ═══════════════════════════════════════════════════ -->
+<div class="section" id="proposta">
+  <div class="diag-grid">
+    <div class="profile-visual">
+      <div class="profile-main">
+        <div class="avatar">YP</div>
+        <p class="profile-handle">@yuripalheiros</p>
+        <p class="profile-niche">Bitcoin · Cripto · Mining · Lifestyle</p>
+        <div class="profile-stats">
+          <div class="pstat">
+            <div class="pstat-val">187K</div>
+            <div class="pstat-lbl">Seguidores</div>
+          </div>
+          <div class="pstat" style="border-left:1px solid rgba(255,255,255,0.08); padding-left:20px; margin-left:4px;">
+            <div class="pstat-val">Dubai</div>
+            <div class="pstat-lbl">Sede Global</div>
+          </div>
+          <div class="pstat" style="border-left:1px solid rgba(255,255,255,0.08); padding-left:20px; margin-left:4px;">
+            <div class="pstat-val">5+</div>
+            <div class="pstat-lbl">Anos de exp.</div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-accent">
+        <p class="pa-label">Instagram</p>
+        <p class="pa-value">187K</p>
+        <p class="pa-sub">Audiência qualificada</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-label">Diagnóstico Atual</p>
+      <h2 class="section-title">Você Tem Tudo.<br><span class="accent">Falta o Sistema.</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        Yuri Palheiros é referência no mercado brasileiro de Bitcoin e infraestrutura cripto. Com 187 mil seguidores, presença em Dubai, Mykonos, Abu Dhabi e eventos internacionais como <em>Bridges of the World</em>, o posicionamento já é premium e único no Brasil.<br><br>
+        O gap não está no produto nem na audiência. Está na <strong style="color:var(--off-white); font-weight:600;">operação comercial e no sistema de escala</strong>. Conteúdo excelente, produto de alto valor e audiência engajada — mas sem máquina de vendas previsível, escalável e autônoma.
+      </p>
+      <div class="tag-cloud">
+        <span class="tag">Bitcoin Mining</span>
+        <span class="tag">Consultoria Cripto</span>
+        <span class="tag">Proteção Patrimonial</span>
+        <span class="tag">Cartão Global</span>
+        <span class="tag">Infraestrutura BTC</span>
+        <span class="tag">Lifestyle Premium</span>
+        <span class="tag">Dubai · Abu Dhabi · Mykonos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="opp-box">
+    <p class="section-label">A Oportunidade</p>
+    <h3 style="font-family:'Bebas Neue',sans-serif; font-size:42px; color:var(--white); letter-spacing:0.02em; line-height:1; margin-top:8px;">Por Que Agora É o Momento Certo</h3>
+    <div class="opp-grid">
+      <div class="opp-item">
+        <p class="opp-title">Audiência Quente e Qualificada</p>
+        <p class="opp-text">187K seguidores com posts recorrentes sobre mining, proteção patrimonial e vida internacional. Essa audiência já está aquecida e pré-qualificada para produtos entre R$50K e R$200K. As frutas estão baixas — falta quem colha.</p>
+      </div>
+      <div class="opp-item">
+        <p class="opp-title">Produto de Ticket Altíssimo</p>
+        <p class="opp-text">Consultoria e acesso a infraestrutura de Bitcoin Mining com ticket entre R$50K e R$200K. Matematicamente, precisamos de apenas 15 a 60 fechamentos por mês para atingir R$3 milhões. A conta é simples.</p>
+      </div>
+      <div class="opp-item">
+        <p class="opp-title">Lacuna de Concorrência Defensável</p>
+        <p class="opp-text">No Brasil, ninguém combina autoridade real em cripto + lifestyle internacional + produto comprovado e de alto valor. Esse posicionamento é único. Agir agora garante a liderança de mercado antes que outros tentem replicar.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SEMANA 1 — ONBOARDING ═════════════════════════════════════════ -->
+<div class="section" id="semana1">
+  <p class="section-label">Semana 1</p>
+  <h2 class="section-title">Onboarding &<br><span class="accent">Ativação Imediata</span></h2>
+  <p class="section-desc">Na primeira semana já começamos a gerar demanda. Enquanto entendemos você a fundo, a equipe comercial já está sendo plugada para capturar leads quentes do seu perfil existente. Zero espera, 100% ação.</p>
+
+  <div class="week-hero">
+    <div class="week-badge">Semana 1 · Dias 1 ao 7</div>
+    <h3 class="week-title">Onboarding e Primeiros Passos</h3>
+    <p class="week-sub">Na primeira semana, foco total em entender você e ligar a máquina comercial. O restante é estruturado ao longo do mês 1.</p>
+
+    <div class="day-list">
+      <div class="day-item">
+        <span class="day-label">Dia 1 · 2</span>
+        <div class="day-body">
+          <p class="day-title">Sessão de Onboarding com o Copywriter</p>
+          <p class="day-desc">Entrevista profunda para mapear tudo que faz você único no mercado. Essa sessão é a base de tudo — copy, scripts, anúncios e playbook de vendas nascem daqui. Saímos com o DNA completo da sua marca e da sua voz.</p>
+          <div class="day-tasks">
+            <p class="day-task">Quem é o Yuri: história, jornada, credenciais e prova social</p>
+            <p class="day-task">Qual dor você resolve de forma que ninguém mais resolve</p>
+            <p class="day-task">Qual é a transformação concreta que seus clientes vivem</p>
+            <p class="day-task">Mapeamento de objeções específicas do mercado de cripto</p>
+            <p class="day-task">Linguagem, expressões e tom of voice para todos os materiais</p>
+            <p class="day-task">Levantamento de depoimentos e resultados de clientes atuais</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-item">
+        <span class="day-label">Dia 3 · 7</span>
+        <div class="day-body">
+          <p class="day-title">Plug da Equipe Comercial + Início do Social Seller</p>
+          <p class="day-desc">Enquanto o copy ainda está sendo estruturado, a equipe comercial já entra em campo para capturar as frutas baixas — leads quentes que já estão na sua audiência mas nunca foram trabalhados. Ao mesmo tempo, você começa a gravar os primeiros conteúdos como Social Seller.</p>
+          <div class="day-tasks">
+            <p class="day-task">Apresentação da equipe comercial e alinhamento de processo</p>
+            <p class="day-task">Abordagem dos leads orgânicos existentes no Instagram</p>
+            <p class="day-task">Você grava os primeiros vídeos — nós orientamos o formato e o ângulo</p>
+            <p class="day-task">Início das conversas de qualificação com a audiência atual</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px; padding:24px 28px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:10px; border-left: 3px solid var(--orange);">
+      <p style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange); margin-bottom:10px;">O restante é estruturado ao longo do Mês 1</p>
+      <p style="font-size:14px; font-weight:300; color:rgba(255,255,255,0.5); line-height:1.65;">Automações, páginas, funis, tráfego pago, edição de vídeo, social media e desenvolvimento de produtos são construídos com calma e estratégia durante o primeiro mês — sem pressa, sem erro. A semana 1 serve para entender você a fundo e já gerar demanda com o que já existe.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DIVISÃO DE RESPONSABILIDADES ════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">Modelo de Operação</p>
+  <h2 class="section-title">Você Foca no Que<br><span class="accent">Só Você Pode Fazer.</span></h2>
+  <p class="section-desc">Nossa proposta é radical e simples: você entrega o produto e aparece nas câmeras. A Folem cuida de absolutamente todo o resto — da captação ao fechamento, da edição ao funil.</p>
+
+  <div class="split-grid">
+    <div class="split-card yuri">
+      <p class="split-tag yuri-tag">→ Yuri Palheiros</p>
+      <h3 class="split-title">O que só você faz</h3>
+      <p class="split-subtitle">Sua energia, autoridade e conhecimento são o ativo principal. Ninguém pode replicar isso — por isso é onde você investe 100% do seu tempo.</p>
+      <ul class="split-list yuri-list">
+        <li>Gravar conteúdo como Social Seller (Reels, Stories, Lives)</li>
+        <li>Fazer as calls de closer para os tickets mais altos</li>
+        <li>Fazer levantada de mão nos conteúdos estratégicos</li>
+        <li>Entregar o produto e conduzir a consultoria</li>
+        <li>Ser o rosto, a autoridade e a prova social da marca</li>
+        <li>Participar de eventos e gerar proof internacional</li>
+        <li>Validar e aprovar ofertas e estratégias</li>
+        <li>Fazer os vídeos de bastidor, lifestyle e posicionamento</li>
+      </ul>
+      <div class="split-emphasis">
+        O seu trabalho é aparecer, gravar e fechar os grandes tickets. A Folem cuida de todo o resto para que você não precise pensar em operação.
+      </div>
+    </div>
+
+    <div class="split-card folem">
+      <p class="split-tag folem-tag">✓ Equipe Folem</p>
+      <h3 class="split-title">A máquina que roda para você</h3>
+      <p class="split-subtitle">Uma equipe multidisciplinar completa dedicada ao seu negócio: copy, tráfego, social media, automação, comercial e produto.</p>
+      <ul class="split-list folem-list">
+        <li>Copywriting de todos os materiais (anúncios, páginas, e-mails, DMs)</li>
+        <li>Edição de vídeo premium para todos os formatos</li>
+        <li>Gestão completa de Social Media (planejamento, publicação, engajamento)</li>
+        <li>Criação, gestão e otimização de tráfego pago (Meta e Google)</li>
+        <li>Automação de DM, e-mail, WhatsApp e chatbot</li>
+        <li>Equipe e playbook comercial (closers, SDRs e qualificadores)</li>
+        <li>Programa de indicação ativa e afiliados estruturado</li>
+        <li>Desenvolvimento completo de todos os produtos digitais</li>
+        <li>Construção de páginas, funis e toda a base técnica</li>
+        <li>Análise de dados e otimização contínua de performance</li>
+        <li>Estratégia de conteúdo, calendário editorial e pautas semanais</li>
+        <li>Gestão de CRM e relacionamento com leads</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVIÇOS COMPLETOS ═══════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">Escopo Completo</p>
+  <h2 class="section-title">Tudo Que Vamos<br><span class="accent">Construir Para Você</span></h2>
+  <p class="section-desc">Cada serviço abaixo é executado por especialistas dedicados. Não é uma agência genérica — é uma operação montada especificamente para o mercado de alto valor do Yuri.</p>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon">✍️</div>
+      <p class="svc-name">Copywriting de Alto Nível</p>
+      <p class="svc-desc">Copy baseado em pesquisa profunda do avatar, construído com a sua voz e linguagem. Tudo que vai para o mercado passa pelo copy primeiro.</p>
+      <ul class="svc-list">
+        <li>Scripts de vídeo (Reels, VSLs, Lives)</li>
+        <li>Copies de anúncios segmentados por temperatura</li>
+        <li>E-mails, DMs e sequências de follow-up</li>
+        <li>Páginas de oferta e squeeze page</li>
+        <li>Scripts de closer para R$50K–R$200K</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">🎬</div>
+      <p class="svc-name">Edição de Vídeo Premium</p>
+      <p class="svc-desc">Você grava, nós entregamos publicado. Edição profissional que mantém o ritmo, a atenção e o posicionamento premium da sua marca.</p>
+      <ul class="svc-list">
+        <li>Edição de Reels e cortes de conteúdo longo</li>
+        <li>Legendas animadas e motion graphics</li>
+        <li>Ajuste de cor, áudio e ritmo</li>
+        <li>Formatação para Instagram, YouTube e demais plataformas</li>
+        <li>Thumbnails e capas otimizadas</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">📱</div>
+      <p class="svc-name">Social Media Completo</p>
+      <p class="svc-desc">Cobertura total do seu perfil: estratégia, produção, publicação, engajamento e escuta social. Seu Instagram trabalha enquanto você dorme.</p>
+      <ul class="svc-list">
+        <li>Calendário editorial mensal com pautas estratégicas</li>
+        <li>Publicação no horário de maior alcance</li>
+        <li>Engajamento ativo: respostas, comentários, DMs</li>
+        <li>Stories e sequências de aquecimento de audiência</li>
+        <li>Relatório semanal de performance e crescimento</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">🚀</div>
+      <p class="svc-name">Tráfego Pago (Meta · Google)</p>
+      <p class="svc-desc">Gestão completa de campanhas pagas para manter o funil sempre cheio. Frio, morno e quente — cada audiência recebe a oferta certa no momento certo.</p>
+      <ul class="svc-list">
+        <li>Estratégia e gestão de campanhas no Meta Ads</li>
+        <li>Remarketing e lookalike audiences</li>
+        <li>Criativos e copies de anúncio para todas as etapas</li>
+        <li>Testes A/B contínuos de variáveis</li>
+        <li>Otimização de ROAS e escala controlada de budget</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">⚡</div>
+      <p class="svc-name">Automações Completas</p>
+      <p class="svc-desc">Cada interação no Instagram vira entrada para a jornada de vendas. Follow-up automático, atendimento 24/7 e zero lead desperdiçado.</p>
+      <ul class="svc-list">
+        <li>ManyChat: automação de DM e comentários</li>
+        <li>Fluxos de e-mail segmentados por comportamento</li>
+        <li>Sequências de WhatsApp para leads qualificados</li>
+        <li>Chatbot de qualificação e agendamento de call</li>
+        <li>Integração CRM + tracking completo da jornada</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">💼</div>
+      <p class="svc-name">Equipe Comercial Estruturada</p>
+      <p class="svc-desc">Closers treinados com playbook completo para fechar de R$50K a R$200K. Você só entra na conversa quando o lead já está pronto para comprar.</p>
+      <ul class="svc-list">
+        <li>Playbook de vendas completo e personalizado</li>
+        <li>Treinamento de closers com role-play e simulações</li>
+        <li>Scripts de abordagem e qualificação de leads</li>
+        <li>Gestão de pipeline no CRM</li>
+        <li>Relatório semanal de conversão e oportunidades</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">🔗</div>
+      <p class="svc-name">Indicação Ativa (Referral)</p>
+      <p class="svc-desc">Seus próprios clientes se tornam o seu melhor canal de aquisição. Estrutura completa de programa de indicação que gera leads premium de forma orgânica e previsível.</p>
+      <ul class="svc-list">
+        <li>Programa de indicação com comissionamento estruturado</li>
+        <li>Materiais e scripts para clientes indicarem ativamente</li>
+        <li>Tracking automático de indicações</li>
+        <li>Ativação da base existente de clientes</li>
+        <li>Incentivos e reconhecimento para top indicadores</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">🛒</div>
+      <p class="svc-name">Desenvolvimento de Produtos</p>
+      <p class="svc-desc">Estruturação de toda a escada de valor — da isca digital ao produto de R$200K. Cada produto tem uma função na jornada do cliente e maximiza o LTV.</p>
+      <ul class="svc-list">
+        <li>Isca digital que gera leads ultraqualificados</li>
+        <li>Oferta de entrada (trip wire) para converter novos clientes</li>
+        <li>Produto principal estruturado e escalável</li>
+        <li>Up-sell, cross-sell e down-sell para maximizar LTV</li>
+        <li>Possibilidade de novos produtos e verticais de receita</li>
+      </ul>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">🏗️</div>
+      <p class="svc-name">Páginas, Funis e Base Técnica</p>
+      <p class="svc-desc">Toda a infraestrutura técnica do negócio: páginas otimizadas, funis de marketing completos e stack de ferramentas integrado e funcionando.</p>
+      <ul class="svc-list">
+        <li>Landing pages de produto e oferta otimizadas</li>
+        <li>Funil completo: topo, meio e fundo</li>
+        <li>Página de conteúdo e página de marca</li>
+        <li>Seleção e configuração do stack de ferramentas</li>
+        <li>Calendário promocional e calendário editorial</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INDICAÇÃO ATIVA (DETALHE) ════════════════════════════════════ -->
+<div class="referral-section">
+  <div class="referral-inner">
+    <p class="section-label">Indicação Ativa</p>
+    <h2 class="section-title">Seus Clientes<br><span class="accent">São Seu Melhor Canal</span></h2>
+    <p class="section-desc">Quem já pagou R$100K por uma consultoria e teve resultado sabe o valor do que você entrega. Com o sistema certo, essa pessoa indica outros dois clientes premium espontaneamente — e ganha por isso.</p>
+
+    <div class="referral-grid">
+      <div class="referral-steps">
+        <div class="ref-step">
+          <span class="ref-num">01</span>
+          <div class="ref-content">
+            <p class="ref-title">Ativação da Base Existente</p>
+            <p class="ref-text">Primeiro, trabalhamos quem já é cliente. Criamos um contato estratégico de reengajamento com a base atual, apresentamos o programa e ativamos os top performers como indicadores prioritários.</p>
+          </div>
+        </div>
+        <div class="ref-step">
+          <span class="ref-num">02</span>
+          <div class="ref-content">
+            <p class="ref-title">Estrutura de Incentivos Irresistível</p>
+            <p class="ref-text">Comissionamento real e atrativo sobre cada indicação fechada. Clientes que indicam recebem benefício financeiro + reconhecimento na comunidade + acesso antecipado a novos produtos.</p>
+          </div>
+        </div>
+        <div class="ref-step">
+          <span class="ref-num">03</span>
+          <div class="ref-content">
+            <p class="ref-title">Material e Script de Indicação</p>
+            <p class="ref-text">Facilitamos ao máximo para que o cliente indique. Material pronto, script de abordagem, link de rastreamento próprio e acompanhamento em tempo real de cada indicação no painel.</p>
+          </div>
+        </div>
+        <div class="ref-step">
+          <span class="ref-num">04</span>
+          <div class="ref-content">
+            <p class="ref-title">Tracking e Automação de Comissionamento</p>
+            <p class="ref-text">Cada indicação é rastreada automaticamente. O indicador acompanha seu painel em tempo real, o pagamento é processado automaticamente e todo o processo é transparente e confiável.</p>
+          </div>
+        </div>
+        <div class="ref-step">
+          <span class="ref-num">05</span>
+          <div class="ref-content">
+            <p class="ref-title">Escala com Parceiros Estratégicos</p>
+            <p class="ref-text">Além de clientes, identificamos e ativamos parceiros estratégicos — outros especialistas, influencers e profissionais que têm acesso à audiência premium que você quer alcançar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="referral-impact">
+        <p class="impact-title">+30%</p>
+        <p class="impact-label">de receita adicional via indicação ativa</p>
+
+        <div class="impact-items">
+          <div class="impact-item">
+            <p class="impact-item-title">Leads de maior qualidade</p>
+            <p class="impact-item-text">Um lead indicado por um cliente satisfeito já chega com confiança e pré-validado. Taxa de conversão até 3x maior que lead de tráfego frio.</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-item-title">CAC zero nas indicações</p>
+            <p class="impact-item-text">O custo de aquisição de um lead indicado é praticamente zero — o investimento vai para o incentivo do indicador, não para anúncios.</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-item-title">Efeito bola de neve</p>
+            <p class="impact-item-text">Com 50 clientes ativos indicando em média 1 cliente por trimestre, você tem 200 novos clientes por ano — sem custo adicional de tráfego.</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-item-title">Comunidade premium</p>
+            <p class="impact-item-text">O programa de indicação fortalece a identidade da comunidade e o senso de pertencimento — aumentando retenção e LTV de cada cliente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ A MATEMÁTICA DOS R$3M ════════════════════════════════════════ -->
+<div class="revenue-wrap">
+  <div class="revenue-inner">
+    <p class="section-label">A Matemática dos R$3M</p>
+    <h2 class="section-title">Como Chegamos<br><span class="accent">nos 3 Milhões</span></h2>
+    <p class="section-desc">A meta é ambiciosa mas matematicamente direta. Veja como os números se encaixam com o seu ticket médio atual — e o que é necessário para que a conta feche todo mês em 5 meses.</p>
+
+    <div class="math-box">
+      <div class="math-row">
+        <span class="math-label">Ticket médio da <strong>Consultoria Premium</strong></span>
+        <span class="math-value">R$100.000</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">Fechamentos necessários por mês</span>
+        <span class="math-value">30 clientes</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">Leads necessários (taxa de conversão 10%)</span>
+        <span class="math-value">300/mês</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">Leads orgânicos potenciais da audiência atual (187K)</span>
+        <span class="math-value">~4.000/mês</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">Leads via tráfego pago (Meta Ads escalado)</span>
+        <span class="math-value">+2.000/mês</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">Leads via indicação ativa (base de clientes ativada)</span>
+        <span class="math-value">+300/mês</span>
+      </div>
+      <div class="math-row">
+        <span class="math-label">Receita adicional via Up-sell / Cross-sell / Novos Produtos</span>
+        <span class="math-value">+30% LTV</span>
+      </div>
+      <div class="math-total">
+        <div>
+          <p class="math-total-label">Meta Mensal Alcançável</p>
+          <p style="font-size:12px; color:rgba(255,255,255,0.35); margin-top:4px; font-weight:300;">Em 5 meses com o sistema completo funcionando</p>
+        </div>
+        <span class="math-total-value">R$3.000.000</span>
+      </div>
+    </div>
+
+    <div class="math-scenarios">
+      <div class="math-scenario">
+        <p class="scenario-label">Primeiros 45 Dias</p>
+        <p class="scenario-ticket">20 fechamentos × R$100K</p>
+        <p class="scenario-total">R$2M</p>
+        <p class="scenario-desc">Projeção já identificada nos cenários</p>
+      </div>
+      <div class="math-scenario">
+        <p class="scenario-label">Mês 3 com sistema rodando</p>
+        <p class="scenario-ticket">25 fechamentos × R$100K</p>
+        <p class="scenario-total">R$2,5M</p>
+        <p class="scenario-desc">Sistema otimizado e escalando</p>
+      </div>
+      <div class="math-scenario highlight">
+        <p class="scenario-label orange">Meta Principal · Mês 5</p>
+        <p class="scenario-ticket">30 fechamentos × R$100K</p>
+        <p class="scenario-total orange">R$3M+</p>
+        <p class="scenario-desc">Escala máxima e operação autônoma</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PROGRAMA DE ACELERAÇÃO ════════════════════════════════════════ -->
+<div class="prog-full">
+  <div class="prog-inner">
+    <p class="section-label">Metodologia</p>
+    <h2 class="section-title">Programa de<br><span class="accent">Aceleração de Negócios</span></h2>
+    <p class="section-desc">7 fases sequenciais e integradas para transformar o negócio do Yuri em uma operação de R$3M/mês previsível, escalável e autônoma. Cada fase é implementada, não apenas recomendada.</p>
+
+    <div class="prog-bar">
+      <div class="prog-pill">
+        <div class="prog-pill-num">01</div>
+        <p class="prog-pill-name">Otimização do Valor do Cliente</p>
+      </div>
+      <div class="prog-pill">
+        <div class="prog-pill-num">02</div>
+        <p class="prog-pill-name">Sistema Previsível de Vendas</p>
+      </div>
+      <div class="prog-pill">
+        <div class="prog-pill-num">03</div>
+        <p class="prog-pill-name">Construção da Base</p>
+      </div>
+      <div class="prog-pill">
+        <div class="prog-pill-num">04</div>
+        <p class="prog-pill-name">Sistema de Funil de Marketing</p>
+      </div>
+      <div class="prog-pill">
+        <div class="prog-pill-num">05</div>
+        <p class="prog-pill-name">Sistema de Tráfego</p>
+      </div>
+      <div class="prog-pill">
+        <div class="prog-pill-num">06</div>
+        <p class="prog-pill-name">Copywriting Avançado</p>
+      </div>
+      <div class="prog-pill">
+        <div class="prog-pill-num">07</div>
+        <p class="prog-pill-name">Sistema de Mídias Sociais</p>
+      </div>
+    </div>
+
+    <div class="phases-grid">
+      <div class="phase-card">
+        <div class="phase-watermark">01</div>
+        <p class="phase-tag">Fase 1</p>
+        <h4 class="phase-title">Otimização do Valor do Cliente</h4>
+        <ul class="phase-items">
+          <li>Construção da Jornada de Valor completa (escada de produtos)</li>
+          <li>Avatar do Cliente detalhado: dores, desejos, medos e aspirações</li>
+          <li>Pesquisa aprofundada de público-alvo no mercado cripto</li>
+          <li>Matriz Antes e Depois: situação atual vs. transformação entregue</li>
+          <li>Construção da Afirmação de Valor central e diferenciadora</li>
+          <li>Validação de Encaixe do Produto no Mercado (PMF)</li>
+          <li>Mapeamento de todos os pontos de contato com o cliente</li>
+        </ul>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-watermark">02</div>
+        <p class="phase-tag">Fase 2</p>
+        <h4 class="phase-title">Sistema Previsível de Vendas</h4>
+        <ul class="phase-items">
+          <li>Isca digital de alto valor para captação de leads premium</li>
+          <li>Oferta de entrada (trip wire) para converter os primeiros clientes</li>
+          <li>Sequências de follow-up automatizadas por canal</li>
+          <li>Oferta principal + maximizador de lucros (up-sell)</li>
+          <li>Down-sell e cross-sell para aproveitar 100% do funil</li>
+          <li>Segmentação por e-mail, chatbot e WhatsApp</li>
+          <li>Campanhas de doutrinação, engajamento e ascensão de clientes</li>
+        </ul>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-watermark">03</div>
+        <p class="phase-tag">Fase 3</p>
+        <h4 class="phase-title">Construção da Base Técnica</h4>
+        <ul class="phase-items">
+          <li>Seleção e integração do stack de ferramentas ideal</li>
+          <li>Construção das páginas de produto com copy estratégico</li>
+          <li>Página de oferta otimizada para conversão máxima</li>
+          <li>Página de conteúdo e captação de leads</li>
+          <li>Página de marca e posicionamento premium</li>
+          <li>Configuração completa de CRM e pipeline de vendas</li>
+          <li>Dashboard de métricas e acompanhamento em tempo real</li>
+        </ul>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-watermark">04</div>
+        <p class="phase-tag">Fase 4</p>
+        <h4 class="phase-title">Sistema de Funil de Marketing</h4>
+        <ul class="phase-items">
+          <li>Estratégia e plano de conteúdo de Topo de Funil</li>
+          <li>Estratégia e plano de conteúdo de Meio de Funil</li>
+          <li>Estratégia e plano de conteúdo de Fundo de Funil</li>
+          <li>Calendário editorial mensal completo e estratégico</li>
+          <li>Calendário promocional com datas e campanhas sazonais</li>
+          <li>Estrutura de nutrição e ascensão de leads pelo funil</li>
+          <li>Métricas de acompanhamento por etapa do funil</li>
+        </ul>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-watermark">05</div>
+        <p class="phase-tag">Fase 5</p>
+        <h4 class="phase-title">Sistema de Tráfego de Clientes</h4>
+        <ul class="phase-items">
+          <li>Copy e criativos para tráfego frio (nova audiência)</li>
+          <li>Copy e criativos para tráfego morno (engajados)</li>
+          <li>Copy e criativos para tráfego quente (leads e ex-leads)</li>
+          <li>Ofertas e CTAs segmentados por temperatura de audiência</li>
+          <li>Gestão de orçamento e escala progressiva controlada</li>
+          <li>Testes A/B sistemáticos de variáveis de performance</li>
+          <li>Relatório semanal de ROAS, CPL e CAC</li>
+        </ul>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-watermark">06</div>
+        <p class="phase-tag">Fase 6</p>
+        <h4 class="phase-title">Copywriting de Alto Nível</h4>
+        <ul class="phase-items">
+          <li>Pesquisa completa do mercado e dos concorrentes</li>
+          <li>Avatar aprofundado com linguagem específica do cliente ideal</li>
+          <li>Expressão do Benefício Profundo (o que o cliente realmente compra)</li>
+          <li>Estrutura e hierarquia da Promessa Principal</li>
+          <li>Estrutura completa da Promoção de Vendas por canal</li>
+          <li>Copy para cada etapa do funil com voz única do Yuri</li>
+          <li>Revisão e otimização contínua com base em dados de conversão</li>
+        </ul>
+      </div>
+
+      <div class="phase-card">
+        <div class="phase-watermark">07</div>
+        <p class="phase-tag">Fase 7</p>
+        <h4 class="phase-title">Sistema de Mídias Sociais</h4>
+        <ul class="phase-items">
+          <li>Auditoria completa das mídias sociais atuais</li>
+          <li>Planejamento de palavras-chave e hashtags por plataforma</li>
+          <li>Escuta social: monitoramento de tendências e concorrentes</li>
+          <li>Estratégia de influência, networking e venda social</li>
+          <li>Ciclo Social automatizado com conteúdo de autoridade recorrente</li>
+          <li>Estratégia de crescimento orgânico de seguidores qualificados</li>
+          <li>Integração de social media com as demais fases do funil</li>
+        </ul>
+      </div>
+
+      <div class="phase-card special">
+        <div class="phase-watermark" style="color:rgba(255,140,0,0.12);">+</div>
+        <p class="phase-tag">Exclusivo da Parceria</p>
+        <h4 class="phase-title">Indicação Ativa + Afiliados</h4>
+        <ul class="phase-items">
+          <li>Programa estruturado de indicação com incentivos reais</li>
+          <li>Comissionamento automatizado por indicação fechada</li>
+          <li>Painel de acompanhamento para indicadores</li>
+          <li>Ativação estratégica da base de clientes existente</li>
+          <li>Parceiros estratégicos e programa de afiliados externo</li>
+          <li>Tracking completo de origem de cada lead e venda</li>
+          <li>Crescimento orgânico exponencial com custo mínimo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CRONOGRAMA ═════════════════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">Cronograma de Execução</p>
+  <h2 class="section-title">De Hoje aos<br><span class="accent">R$3 Milhões</span></h2>
+  <p class="section-desc">Cada marco tem entregáveis claros e resultados mensuráveis. Não trabalhamos com promessas vagas — trabalhamos com sistemas, dados e execução.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot active">S1</div>
+      <div class="tl-body">
+        <p class="tl-period">Semana 1 · Onboarding</p>
+        <h4 class="tl-title">Sessão com o Copy + Equipe Comercial no Ar</h4>
+        <p class="tl-text">Foco total em dois movimentos: entender você a fundo com o copywriter e ligar a equipe comercial para capturar os leads quentes que já existem na sua audiência. Yuri começa a gravar como Social Seller. O restante da operação é estruturado ao longo do mês 1.</p>
+        <div class="tl-deliverables">
+          <span class="tl-chip">Sessão de onboarding com copy</span>
+          <span class="tl-chip">Equipe comercial ativa</span>
+          <span class="tl-chip">Social Seller iniciado</span>
+          <span class="tl-chip">Frutas baixas em captura</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">M1</div>
+      <div class="tl-body">
+        <p class="tl-period">Mês 1 · Estruturação Completa</p>
+        <h4 class="tl-title">Todo o Sistema Sendo Construído</h4>
+        <p class="tl-text">Com o DNA da marca mapeado, a equipe constrói a operação completa: automações, páginas, funis, edição de vídeo, social media, tráfego pago, desenvolvimento de produtos e programa de indicação. Fases 1 a 7 implementadas com calma e estratégia.</p>
+        <div class="tl-deliverables">
+          <span class="tl-chip">7 fases estruturadas</span>
+          <span class="tl-chip">Funil e páginas no ar</span>
+          <span class="tl-chip">Automações configuradas</span>
+          <span class="tl-chip">Tráfego pago iniciado</span>
+          <span class="tl-chip">Primeiros fechamentos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot" style="background:rgba(255,140,0,0.15); border-color:var(--orange);">45d</div>
+      <div class="tl-body">
+        <p class="tl-period">45 Dias · Marco de R$2M</p>
+        <h4 class="tl-title">R$2 Milhões — Projeção Identificada nos Cenários</h4>
+        <p class="tl-text">Com base na análise dos cenários do negócio do Yuri, a projeção aponta R$2 milhões já nos primeiros 45 dias. A audiência quente de 187K, o ticket premium e a equipe comercial ativa tornam esse número factível sem precisar esperar o sistema completo estar rodando.</p>
+        <div class="tl-deliverables">
+          <span class="tl-chip" style="color:var(--orange); background:rgba(255,140,0,0.1); border-color:rgba(255,140,0,0.35);">R$2M projetados</span>
+          <span class="tl-chip">Frutas baixas colhidas</span>
+          <span class="tl-chip">Equipe comercial em ritmo</span>
+          <span class="tl-chip">Social Seller gerando leads</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">M3</div>
+      <div class="tl-body">
+        <p class="tl-period">Mês 3 · Escala e Novos Produtos</p>
+        <h4 class="tl-title">Aceleração Máxima + Novas Verticais de Receita</h4>
+        <p class="tl-text">Sistema validado por dados reais. Lançamos novos produtos e verticais de receita, ativamos parceiros estratégicos para o programa de indicação e otimizamos cada variável para maximizar ROAS e conversão.</p>
+        <div class="tl-deliverables">
+          <span class="tl-chip">Novos produtos lançados</span>
+          <span class="tl-chip">Up-sell / cross-sell ativo</span>
+          <span class="tl-chip">Parceiros de indicação</span>
+          <span class="tl-chip">ROAS otimizado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">M5</div>
+      <div class="tl-body">
+        <p class="tl-period">Mês 5 · Meta Final</p>
+        <h4 class="tl-title">R$3 Milhões por Mês · Sistema Autônomo</h4>
+        <p class="tl-text">Operação completamente autônoma. Você grava o conteúdo e fecha os tickets de R$200K. A máquina gera, qualifica e prepara os leads. A equipe comercial fecha. O programa de indicação alimenta o funil. R$3M/mês previsível e crescente.</p>
+        <div class="tl-deliverables">
+          <span class="tl-chip">R$3M/mês atingido</span>
+          <span class="tl-chip">Operação autônoma</span>
+          <span class="tl-chip">Receita previsível e escalável</span>
+          <span class="tl-chip">Yuri 100% no produto</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CTA FINAL ══════════════════════════════════════════════════════ -->
+<div class="final-cta" id="cta">
+  <p style="font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange); margin-bottom:20px; display:flex; align-items:center; gap:10px; justify-content:center;">
+    <span style="display:inline-block; width:20px; height:2px; background:var(--orange);"></span>
+    Próximo Passo
+    <span style="display:inline-block; width:20px; height:2px; background:var(--orange);"></span>
+  </p>
+  <h2 class="final-big">
+    A Máquina<br>Está Pronta.
+    <span class="accent">Falta o Seu Sim.</span>
+  </h2>
+  <p class="final-sub">
+    A primeira semana de onboarding já está estruturada e a equipe está pronta para começar. <strong>Uma única decisão separa onde você está de onde você quer estar.</strong>
+  </p>
+  <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+    <a href="https://wa.me/" class="btn-primary" style="font-size:14px; padding:20px 52px;">Fechar a Parceria Agora ↗</a>
+  </div>
+  <p class="final-note">Proposta válida e confidencial · Preparada exclusivamente para @yuripalheiros · Folem 2026</p>
+</div>
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">
+    <img src="Logo Folem.png" alt="Folem">
+  </div>
+  <p class="footer-text">
+    Programa de Aceleração de Negócios · Proposta Estratégica 2026 · <span>Confidencial</span>
+  </p>
+  <p class="footer-conf">@yuripalheiros · folem.com.br</p>
+</footer>
+
+</body>
+</html>

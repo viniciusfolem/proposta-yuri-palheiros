@@ -1,0 +1,3 @@
+# PDFs grandes (não necessários para o site)
+*.pdf
+.DS_Store
